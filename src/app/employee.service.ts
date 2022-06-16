@@ -8,10 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
 
-  baseUrl = 'http://localhost:8080/api/v1/employees';
+  baseUrl = 'http://localhost:8080/api/v1/';
   constructor(private httpClient: HttpClient) { }
 
   getEmployeesList(): Observable<Employee[]> {
-    return this.httpClient.get<Employee[]>(this.baseUrl);
+    return this.httpClient.get<Employee[]>(this.baseUrl + 'employees');
+  }
+
+  createEmployee(employee: Employee): Observable<Object>{
+    return this.httpClient.post<Employee>(this.baseUrl + 'save', employee);
   }
 }
