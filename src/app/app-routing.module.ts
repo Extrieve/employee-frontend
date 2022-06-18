@@ -4,13 +4,15 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FetchEmployeeComponent } from './fetch-employee/fetch-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'employees', pathMatch: 'full'},
   {path: 'create-employee', component: CreateEmployeeComponent},
   {path: 'employees', component: EmployeeListComponent},
   {path: 'update-employee/:id', component: UpdateEmployeeComponent},
-  {path: 'employees/:id', component: FetchEmployeeComponent}
+  {path: 'employees/:id', component: FetchEmployeeComponent},
+  {path: 'delete-employee/:id', component: DeleteEmployeeComponent}
 ];
 
 @NgModule({

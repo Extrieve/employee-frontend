@@ -32,4 +32,8 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate(['employees', id]);
   }
 
+  public deleteEmployeeById(id: number){
+    this.router.navigate(['delete-employee', id]);
+  }
+
 }
