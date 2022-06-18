@@ -14,7 +14,10 @@
       <td> {{ employee.lastName }} </td>
       <td> {{ employee.email }} </td>
       <td>
-        <button (click)="updateEmployee(employee.id)" class="btn btn-info"> Update</button>
+        <button (click)="updateEmployee(employee.id)" class="btn btn-warning"> Update</button>
+      </td>
+      <td>
+        <button (click)="getEmployeeById(employee.id)" class="btn btn-info"> Info</button>
       </td>
     </tr>
   </tbody>
