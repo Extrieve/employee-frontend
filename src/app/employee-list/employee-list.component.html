@@ -1,6 +1,6 @@
 <h2> Employee List</h2>
 <button type="submit" class="btn btn-primary" (click)="onSearchSubmit()">Submit</button>
-<button type="submit" class="btn btn-info" (click)="getEmployeesList()">Reset</button>
+<button type="submit" class="btn btn-info" (click)="onReset()">Reset</button>
 <input type="text" class="form-control" placeholder="{{employees[0].firstName}}"
   #firstNameInput
  (input)="onInput(firstNameInput.value)"
