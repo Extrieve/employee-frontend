@@ -11,10 +11,17 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeListComponent implements OnInit {
 
   employees!: Employee[];
+  search: string = "";
+
   constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
     this.getEmployeesList();
+  }
+
+  public onInput(firstName: string){
+    this.search = firstName;
+    console.log(this.search);
   }
 
   public getEmployeesList(){
@@ -22,6 +29,13 @@ export class EmployeeListComponent implements OnInit {
       this.employees = data;
       console.log(this.employees);
     });
+  }
+
+  public getEmployeeByFirstName(firstName: string){
+    this.employeeService.getEmployeeByFirstName(firstName).subscribe(data => {
+      this.employees = data;
+      console.log(this.employees);
+    })
   }
 
   public updateEmployee(id: number){

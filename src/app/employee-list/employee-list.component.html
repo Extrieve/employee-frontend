@@ -1,4 +1,8 @@
 <h2> Employee List</h2>
+<input type="text" class="form-control" placeholder="{{employees[0].firstName}}"
+  #firstNameInput
+ (input)="onInput(firstNameInput.value)"
+ >
 <table class="table table-striped">
   <thead>
     <tr>
