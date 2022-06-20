@@ -24,6 +24,11 @@ export class EmployeeListComponent implements OnInit {
     console.log(this.search);
   }
 
+  public onSearchSubmit(){
+    this.getEmployeeByFirstName(this.search);
+    console.log(this.employees);
+  }
+
   public getEmployeesList(){
     this.employeeService.getEmployeesList().subscribe(data => {
       this.employees = data;
